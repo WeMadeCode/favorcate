@@ -1,0 +1,2 @@
+# Favorcate
+A Flutter Demo
