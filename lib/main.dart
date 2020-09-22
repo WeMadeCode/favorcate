@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'core/route/router.dart';
 import 'ui/shared/size_fit.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
