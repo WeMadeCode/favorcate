@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 
 class SizeFit {
@@ -30,7 +29,6 @@ class SizeFit {
     // 5.计算rpx的大小
     rpx = screenWidth / standardSize;
     px = screenWidth / standardSize * 2;
-
   }
 
   static double setRpx(double size) {
@@ -40,5 +38,4 @@ class SizeFit {
   static double setPx(double size) {
     return px * size;
   }
-
 }
