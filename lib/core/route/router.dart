@@ -1,6 +1,6 @@
 
 
-import 'package:favorcate/ui/main/main.dart';
+import 'package:favorcate/ui/main/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class Router {
