@@ -1,5 +1,5 @@
-import 'package:favorcate/ui/pages/favor/favor.dart';
-import 'package:favorcate/ui/pages/home/home.dart';
+import 'package:favorcate/ui/pages/favor/favor_screen.dart';
+import 'package:favorcate/ui/pages/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 final List<Widget> pages = [

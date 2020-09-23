@@ -1,4 +1,5 @@
 import 'package:favorcate/core/model/category_model.dart';
+import 'package:favorcate/ui/pages/meal/meal_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeCategoryItem extends StatelessWidget {
@@ -25,7 +26,9 @@ class HomeCategoryItem extends StatelessWidget {
               .copyWith(fontWeight: FontWeight.bold),
         ),
       ),
-      onTap: () => print("我被人点了"),
+      onTap: () {
+        Navigator.of(context).pushNamed(MealScreen.routeName, arguments: _category);
+      },
     );
   }
 }
