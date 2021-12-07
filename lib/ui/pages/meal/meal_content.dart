@@ -9,7 +9,7 @@ import 'package:collection/collection.dart';
 class MealContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final category = ModalRoute.of(context).settings.arguments as CategoryModel;
+    final category = ModalRoute.of(context)?.settings.arguments as CategoryModel;
     return Selector<MealViewModel, List<MealModel>> (
       selector: (context, viewModel) {
         return viewModel.meals.where((element){

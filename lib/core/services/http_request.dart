@@ -10,22 +10,22 @@ class HttpRequest {
 
   static Future<T> request<T>(String url,
       {String method = "get",
-      Map<String, dynamic> params,
-      Interceptor inter}) async {
+      Map<String, dynamic>? params,
+      Interceptor? inter}) async {
     // 1.创建单独配置
     final options = Options(method: method);
 
     // 全局拦截器
     // 创建默认的全局拦截器
-    Interceptor dinter = InterceptorsWrapper(onRequest: (options) {
+    final dinter = InterceptorsWrapper(onRequest: (options, handler) {
       print("请求拦截");
-      return options;
-    }, onResponse: (response) {
+      // return options.h;
+    }, onResponse: (response, handler) {
       print("响应拦截");
-      return response;
-    }, onError: (err) {
+      // return response;
+    }, onError: (err, handler) {
       print("错误拦截");
-      return err;
+      // return err;
     });
 
     List<Interceptor> inters = [dinter];

@@ -8,7 +8,6 @@ import 'operation_item.dart';
 final cardRadius = 12.px;
 
 class MealItem extends StatelessWidget {
-
   final MealModel _meal;
   MealItem(this._meal);
 
@@ -18,30 +17,32 @@ class MealItem extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.all(10.px),
         elevation: 5,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(cardRadius)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(cardRadius)),
         child: Column(
-          children: <Widget>[
-            buildBasicInfo(context),
-            buildOperationInfo()
-          ],
+          children: <Widget>[buildBasicInfo(context), buildOperationInfo()],
         ),
       ),
-      onTap: (){
-          Navigator.of(context).pushNamed(DetailScreen.routeName, arguments: _meal);
+      onTap: () {
+        Navigator.of(context)
+            .pushNamed(DetailScreen.routeName, arguments: _meal);
       },
     );
   }
 
-
-    Widget buildBasicInfo(BuildContext context) {
+  Widget buildBasicInfo(BuildContext context) {
     return Stack(
       children: <Widget>[
         ClipRRect(
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(cardRadius),
-            topRight: Radius.circular(cardRadius)
+              topLeft: Radius.circular(cardRadius),
+              topRight: Radius.circular(cardRadius)),
+          child: Image.network(
+            _meal.imageUrl,
+            width: double.infinity,
+            height: 250.px,
+            fit: BoxFit.cover,
           ),
-          child: Image.network(_meal.imageUrl, width: double.infinity, height: 250.px, fit: BoxFit.cover,),
         ),
         Positioned(
           right: 10.px,
@@ -50,10 +51,14 @@ class MealItem extends StatelessWidget {
             width: 300.px,
             padding: EdgeInsets.symmetric(horizontal: 10.px, vertical: 5.px),
             decoration: BoxDecoration(
-              color: Colors.black54,
-              borderRadius: BorderRadius.circular(6.px)
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(6.px)),
+            child: Text(
+              _meal.title,
+              style: Theme.of(context).textTheme.headline3?.copyWith(
+                  color: Colors
+                      .white), //Before: Theme.of(context).textTheme.display3.copyWith(color: Colors.white)
             ),
-            child: Text(_meal.title, style: Theme.of(context).textTheme.display3.copyWith(color: Colors.white),),
           ),
         )
       ],
@@ -73,5 +78,4 @@ class MealItem extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -20,10 +20,7 @@ class HomeCategoryItem extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           _category.title,
-          style: Theme.of(context)
-              .textTheme
-              .display2
-              .copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.headline2?.copyWith(fontWeight: FontWeight.bold), //Theme.of(context).textTheme.display2.copyWith(fontWeight: FontWeight.bold)
         ),
       ),
       onTap: () {

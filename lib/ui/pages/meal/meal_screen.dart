@@ -10,7 +10,7 @@ class MealScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 获取参数
-    final category = ModalRoute.of(context).settings.arguments as CategoryModel;
+    final category = ModalRoute.of(context)?.settings.arguments as CategoryModel;
     return Scaffold(
       appBar: AppBar(title:Text(category.title)),
       body: MealContent()

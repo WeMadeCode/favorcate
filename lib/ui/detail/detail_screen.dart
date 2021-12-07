@@ -6,7 +6,7 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final meal = ModalRoute.of(context).settings.arguments as MealModel;
+    final meal = ModalRoute.of(context)?.settings.arguments as MealModel;
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),

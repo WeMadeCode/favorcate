@@ -14,10 +14,10 @@ class AppTheme {
       primarySwatch: Colors.pink,
       canvasColor: Color.fromRGBO(255, 254, 222, 1),
       textTheme: TextTheme(
-        body1: TextStyle(fontSize: bodyFontSize),
-        display1: TextStyle(fontSize: smallFontSize, color: Colors.black87),
-        display2: TextStyle(fontSize: normalFontSize, color: Colors.black87),
-        display3: TextStyle(fontSize: largeFontSize, color: Colors.black87),
+        bodyText1: TextStyle(fontSize: bodyFontSize),
+        headline1: TextStyle(fontSize: smallFontSize, color: Colors.black87),
+        headline2: TextStyle(fontSize: normalFontSize, color: Colors.black87),
+        headline3: TextStyle(fontSize: largeFontSize, color: Colors.black87),
       ));
 
   // 3.暗黑模式
@@ -26,5 +26,6 @@ class AppTheme {
   static final ThemeData darkTheme = ThemeData(
       primarySwatch: Colors.grey,
       textTheme: TextTheme(
-          body1: TextStyle(fontSize: normalFontSize, color: darkTextColors)));
+          bodyText1:
+              TextStyle(fontSize: normalFontSize, color: darkTextColors)));
 }

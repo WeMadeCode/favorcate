@@ -21,7 +21,7 @@ class HomeContent extends StatelessWidget {
     
         return GridView.builder(
           padding: EdgeInsets.all(20.px),
-          itemCount: categories.length,
+          itemCount: categories?.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 20.px,
@@ -30,7 +30,7 @@ class HomeContent extends StatelessWidget {
 
           ), 
           itemBuilder: (context, index){
-            return HomeCategoryItem(categories[index]);
+            return HomeCategoryItem(categories![index]);
           });
       },
     );

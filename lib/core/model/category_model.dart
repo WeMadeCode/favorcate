@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CategoryModel {
-  String id;
-  String title;
-  String color;
-  Color cColor;
+  String id = "";
+  String title = "";
+  String color = "";
+  Color cColor = Colors.white;
 
-  CategoryModel({this.id, this.title, this.color});
+  CategoryModel({this.id = "", this.title = "", this.color = ""});
 
   CategoryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
