@@ -22,7 +22,7 @@ class MealModel {
   bool isVegetarian;
   bool isLactoseFree;
 
-  MealModel({
+  MealModel(
     this.id,
     this.categories,
     this.title,
@@ -37,23 +37,23 @@ class MealModel {
     this.isVegan,
     this.isVegetarian,
     this.isLactoseFree,
-  });
+  );
 
   factory MealModel.fromJson(Map<String, dynamic> json) => MealModel(
-    id: json["id"],
-    categories: List<String>.from(json["categories"].map((x) => x)),
-    title: json["title"],
-    affordability: json["affordability"],
-    complexity: json["complexity"],
-    complexStr: complexes[json["complexity"]],
-    imageUrl: json["imageUrl"],
-    duration: json["duration"],
-    ingredients: List<String>.from(json["ingredients"].map((x) => x)),
-    steps: List<String>.from(json["steps"].map((x) => x)),
-    isGlutenFree: json["isGlutenFree"],
-    isVegan: json["isVegan"],
-    isVegetarian: json["isVegetarian"],
-    isLactoseFree: json["isLactoseFree"],
+    json["id"],
+    List<String>.from(json["categories"].map((x) => x)),
+    json["title"],
+    json["affordability"],
+    json["complexity"],
+    complexes[json["complexity"]],
+    json["imageUrl"],
+    json["duration"],
+    List<String>.from(json["ingredients"].map((x) => x)),
+    List<String>.from(json["steps"].map((x) => x)),
+    json["isGlutenFree"],
+    json["isVegan"],
+    json["isVegetarian"],
+    json["isLactoseFree"],
   );
 
   Map<String, dynamic> toJson() => {

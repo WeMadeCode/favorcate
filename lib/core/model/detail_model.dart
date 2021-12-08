@@ -13,16 +13,16 @@ class DetailModel {
   Result result;
   Status status;
 
-  DetailModel({
+  DetailModel(
     this.iid,
     this.result,
     this.status,
-  });
+  );
 
   factory DetailModel.fromJson(Map<String, dynamic> json) => DetailModel(
-    iid: json["iid"],
-    result: Result.fromJson(json["result"]),
-    status: Status.fromJson(json["status"]),
+    json["iid"],
+    Result.fromJson(json["result"]),
+    Status.fromJson(json["status"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -45,7 +45,7 @@ class Result {
   SkuInfo skuInfo;
   TopBar topBar;
 
-  Result({
+  Result(
     this.columns,
     this.detailInfo,
     this.esi,
@@ -57,20 +57,20 @@ class Result {
     this.shopInfo,
     this.skuInfo,
     this.topBar,
-  });
+  );
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
-    columns: List<String>.from(json["columns"].map((x) => x)),
-    detailInfo: DetailInfo.fromJson(json["detailInfo"]),
-    esi: json["esi"],
-    isLogin: json["isLogin"],
-    itemInfo: ItemInfo.fromJson(json["itemInfo"]),
-    itemParams: ItemParams.fromJson(json["itemParams"]),
-    promotions: Promotions.fromJson(json["promotions"]),
-    rate: Rate.fromJson(json["rate"]),
-    shopInfo: ShopInfo.fromJson(json["shopInfo"]),
-    skuInfo: SkuInfo.fromJson(json["skuInfo"]),
-    topBar: TopBar.fromJson(json["topBar"]),
+    List<String>.from(json["columns"].map((x) => x)),
+    DetailInfo.fromJson(json["detailInfo"]),
+    json["esi"],
+    json["isLogin"],
+    ItemInfo.fromJson(json["itemInfo"]),
+    ItemParams.fromJson(json["itemParams"]),
+    Promotions.fromJson(json["promotions"]),
+    Rate.fromJson(json["rate"]),
+    ShopInfo.fromJson(json["shopInfo"]),
+    SkuInfo.fromJson(json["skuInfo"]),
+    TopBar.fromJson(json["topBar"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -92,14 +92,14 @@ class DetailInfo {
   String desc;
   List<DetailImage> detailImage;
 
-  DetailInfo({
+  DetailInfo(
     this.desc,
     this.detailImage,
-  });
+  );
 
   factory DetailInfo.fromJson(Map<String, dynamic> json) => DetailInfo(
-    desc: json["desc"],
-    detailImage: List<DetailImage>.from(json["detailImage"].map((x) => DetailImage.fromJson(x))),
+    json["desc"],
+    List<DetailImage>.from(json["detailImage"].map((x) => DetailImage.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -114,18 +114,18 @@ class DetailImage {
   String key;
   List<String> list;
 
-  DetailImage({
+  DetailImage(
     this.anchor,
     this.desc,
     this.key,
     this.list,
-  });
+  );
 
   factory DetailImage.fromJson(Map<String, dynamic> json) => DetailImage(
-    anchor: json["anchor"],
-    desc: json["desc"],
-    key: json["key"],
-    list: List<String>.from(json["list"].map((x) => x)),
+    json["anchor"],
+    json["desc"],
+    json["key"],
+    List<String>.from(json["list"].map((x) => x)),
   );
 
   Map<String, dynamic> toJson() => {
@@ -168,7 +168,7 @@ class ItemInfo {
   List<String> topImages;
   String userId;
 
-  ItemInfo({
+  ItemInfo(
     this.addCartTips,
     this.admin,
     this.cFav,
@@ -199,39 +199,39 @@ class ItemInfo {
     this.title,
     this.topImages,
     this.userId,
-  });
+  );
 
   factory ItemInfo.fromJson(Map<String, dynamic> json) => ItemInfo(
-    addCartTips: json["addCartTips"],
-    admin: json["admin"],
-    cFav: json["cFav"],
-    cartNum: json["cartNum"],
-    cids: json["cids"],
-    desc: json["desc"],
-    discountBgColor: json["discountBgColor"],
-    discountDesc: json["discountDesc"],
-    extra: Extra.fromJson(json["extra"]),
-    highNowPrice: json["highNowPrice"],
-    highPrice: json["highPrice"],
-    iid: json["iid"],
-    imUrl: json["imUrl"],
-    inActivity: json["inActivity"],
-    isFaved: json["isFaved"],
-    isGrayUser: json["isGrayUser"],
-    isNewComer: json["isNewComer"],
-    isSelf: json["isSelf"],
-    lowNowPrice: json["lowNowPrice"],
-    lowPrice: json["lowPrice"],
-    oldPrice: json["oldPrice"],
-    price: json["price"],
-    redPacketsSwitch: json["redPacketsSwitch"],
-    saleType: json["saleType"],
-    shopId: json["shopId"],
-    state: json["state"],
-    tags: json["tags"],
-    title: json["title"],
-    topImages: List<String>.from(json["topImages"].map((x) => x)),
-    userId: json["userId"],
+    json["addCartTips"],
+    json["admin"],
+    json["cFav"],
+    json["cartNum"],
+    json["cids"],
+    json["desc"],
+    json["discountBgColor"],
+    json["discountDesc"],
+    Extra.fromJson(json["extra"]),
+    json["highNowPrice"],
+    json["highPrice"],
+    json["iid"],
+    json["imUrl"],
+    json["inActivity"],
+    json["isFaved"],
+    json["isGrayUser"],
+    json["isNewComer"],
+    json["isSelf"],
+    json["lowNowPrice"],
+    json["lowPrice"],
+    json["oldPrice"],
+    json["price"],
+    json["redPacketsSwitch"],
+    json["saleType"],
+    json["shopId"],
+    json["state"],
+    json["tags"],
+    json["title"],
+    List<String>.from(json["topImages"].map((x) => x)),
+    json["userId"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -272,14 +272,14 @@ class Extra {
   int deliveryTime;
   String sendAddress;
 
-  Extra({
+  Extra(
     this.deliveryTime,
     this.sendAddress,
-  });
+  );
 
   factory Extra.fromJson(Map<String, dynamic> json) => Extra(
-    deliveryTime: json["deliveryTime"],
-    sendAddress: json["sendAddress"],
+    json["deliveryTime"],
+    json["sendAddress"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -292,14 +292,14 @@ class ItemParams {
   Info info;
   Rule rule;
 
-  ItemParams({
+  ItemParams(
     this.info,
     this.rule,
-  });
+  );
 
   factory ItemParams.fromJson(Map<String, dynamic> json) => ItemParams(
-    info: Info.fromJson(json["info"]),
-    rule: Rule.fromJson(json["rule"]),
+    Info.fromJson(json["info"]),
+    Rule.fromJson(json["rule"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -313,16 +313,16 @@ class Info {
   String key;
   List<Set> infoSet;
 
-  Info({
+  Info(
     this.anchor,
     this.key,
     this.infoSet,
-  });
+  );
 
   factory Info.fromJson(Map<String, dynamic> json) => Info(
-    anchor: json["anchor"],
-    key: json["key"],
-    infoSet: List<Set>.from(json["set"].map((x) => Set.fromJson(x))),
+    json["anchor"],
+    json["key"],
+    List<Set>.from(json["set"].map((x) => Set.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -336,14 +336,14 @@ class Set {
   String key;
   String value;
 
-  Set({
+  Set(
     this.key,
     this.value,
-  });
+  );
 
   factory Set.fromJson(Map<String, dynamic> json) => Set(
-    key: json["key"],
-    value: json["value"],
+    json["key"],
+    json["value"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -358,18 +358,18 @@ class Rule {
   String key;
   List<List<List<String>>> tables;
 
-  Rule({
+  Rule(
     this.anchor,
     this.disclaimer,
     this.key,
     this.tables,
-  });
+  );
 
   factory Rule.fromJson(Map<String, dynamic> json) => Rule(
-    anchor: json["anchor"],
-    disclaimer: json["disclaimer"],
-    key: json["key"],
-    tables: List<List<List<String>>>.from(json["tables"].map((x) => List<List<String>>.from(x.map((x) => List<String>.from(x.map((x) => x)))))),
+    json["anchor"],
+    json["disclaimer"],
+    json["key"],
+    List<List<List<String>>>.from(json["tables"].map((x) => List<List<String>>.from(x.map((x) => List<String>.from(x.map((x) => x)))))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -385,16 +385,16 @@ class Promotions {
   String link;
   List<String> list;
 
-  Promotions({
+  Promotions(
     this.alertData,
     this.link,
     this.list,
-  });
+  );
 
   factory Promotions.fromJson(Map<String, dynamic> json) => Promotions(
-    alertData: AlertData.fromJson(json["alertData"]),
-    link: json["link"],
-    list: List<String>.from(json["list"].map((x) => x)),
+    AlertData.fromJson(json["alertData"]),
+    json["link"],
+    List<String>.from(json["list"].map((x) => x)),
   );
 
   Map<String, dynamic> toJson() => {
@@ -418,14 +418,14 @@ class Rate {
   int cRate;
   List<RateList> list;
 
-  Rate({
+  Rate(
     this.cRate,
     this.list,
-  });
+  );
 
   factory Rate.fromJson(Map<String, dynamic> json) => Rate(
-    cRate: json["cRate"],
-    list: List<RateList>.from(json["list"].map((x) => RateList.fromJson(x))),
+    json["cRate"],
+    List<RateList>.from(json["list"].map((x) => RateList.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -447,7 +447,7 @@ class RateList {
   String style;
   User user;
 
-  RateList({
+  RateList(
     this.canExplain,
     this.content,
     this.created,
@@ -459,20 +459,20 @@ class RateList {
     this.rateId,
     this.style,
     this.user,
-  });
+  );
 
   factory RateList.fromJson(Map<String, dynamic> json) => RateList(
-    canExplain: json["canExplain"],
-    content: json["content"],
-    created: json["created"],
-    extraInfo: List<String>.from(json["extraInfo"].map((x) => x)),
-    images: List<String>.from(json["images"].map((x) => x)),
-    isAnonymous: json["isAnonymous"],
-    isEmpty: json["isEmpty"],
-    level: json["level"],
-    rateId: json["rateId"],
-    style: json["style"],
-    user: User.fromJson(json["user"]),
+    json["canExplain"],
+    json["content"],
+    json["created"],
+    List<String>.from(json["extraInfo"].map((x) => x)),
+    List<String>.from(json["images"].map((x) => x)),
+    json["isAnonymous"],
+    json["isEmpty"],
+    json["level"],
+    json["rateId"],
+    json["style"],
+    User.fromJson(json["user"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -497,20 +497,20 @@ class User {
   String uid;
   String uname;
 
-  User({
+  User(
     this.avatar,
     this.profileUrl,
     this.tagIndex,
     this.uid,
     this.uname,
-  });
+  );
 
   factory User.fromJson(Map<String, dynamic> json) => User(
-    avatar: json["avatar"],
-    profileUrl: json["profileUrl"],
-    tagIndex: json["tagIndex"],
-    uid: json["uid"],
-    uname: json["uname"],
+    json["avatar"],
+    json["profileUrl"],
+    json["tagIndex"],
+    json["uid"],
+    json["uname"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -540,7 +540,7 @@ class ShopInfo {
   int type;
   String userId;
 
-  ShopInfo({
+  ShopInfo(
     this.allGoodsUrl,
     this.cFans,
     this.cGoods,
@@ -557,25 +557,25 @@ class ShopInfo {
     this.shopUrl,
     this.type,
     this.userId,
-  });
+  );
 
   factory ShopInfo.fromJson(Map<String, dynamic> json) => ShopInfo(
-    allGoodsUrl: json["allGoodsUrl"],
-    cFans: json["cFans"],
-    cGoods: json["cGoods"],
-    cSells: json["cSells"],
-    categories: List<Category>.from(json["categories"].map((x) => Category.fromJson(x))),
-    isMarked: json["isMarked"],
-    level: json["level"],
-    name: json["name"],
-    nonsupportReasonRefound: json["nonsupportReasonRefound"],
-    score: List<Score>.from(json["score"].map((x) => Score.fromJson(x))),
-    services: List<Service>.from(json["services"].map((x) => Service.fromJson(x))),
-    shopId: json["shopId"],
-    shopLogo: json["shopLogo"],
-    shopUrl: json["shopUrl"],
-    type: json["type"],
-    userId: json["userId"],
+    json["allGoodsUrl"],
+    json["cFans"],
+    json["cGoods"],
+    json["cSells"],
+    List<Category>.from(json["categories"].map((x) => Category.fromJson(x))),
+    json["isMarked"],
+    json["level"],
+    json["name"],
+    json["nonsupportReasonRefound"],
+    List<Score>.from(json["score"].map((x) => Score.fromJson(x))),
+    List<Service>.from(json["services"].map((x) => Service.fromJson(x))),
+    json["shopId"],
+    json["shopLogo"],
+    json["shopUrl"],
+    json["type"],
+    json["userId"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -602,14 +602,14 @@ class Category {
   String link;
   String name;
 
-  Category({
+  Category(
     this.link,
     this.name,
-  });
+  );
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
-    link: json["link"],
-    name: json["name"],
+    json["link"],
+    json["name"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -623,16 +623,16 @@ class Score {
   String name;
   double score;
 
-  Score({
+  Score(
     this.isBetter,
     this.name,
     this.score,
-  });
+  );
 
   factory Score.fromJson(Map<String, dynamic> json) => Score(
-    isBetter: json["isBetter"],
-    name: json["name"],
-    score: json["score"].toDouble(),
+    json["isBetter"],
+    json["name"],
+    json["score"].toDouble(),
   );
 
   Map<String, dynamic> toJson() => {
@@ -646,14 +646,14 @@ class Service {
   String icon;
   String name;
 
-  Service({
+  Service(
     this.icon,
     this.name,
-  });
+  );
 
   factory Service.fromJson(Map<String, dynamic> json) => Service(
-    icon: json["icon"],
-    name: json["name"],
+    json["icon"],
+    json["name"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -673,7 +673,7 @@ class SkuInfo {
   String title;
   int totalStock;
 
-  SkuInfo({
+  SkuInfo(
     this.defaultPrice,
     this.isAbroad,
     this.priceRange,
@@ -683,18 +683,18 @@ class SkuInfo {
     this.styleKey,
     this.title,
     this.totalStock,
-  });
+  );
 
   factory SkuInfo.fromJson(Map<String, dynamic> json) => SkuInfo(
-    defaultPrice: json["defaultPrice"],
-    isAbroad: json["isAbroad"],
-    priceRange: json["priceRange"],
-    props: List<Prop>.from(json["props"].map((x) => Prop.fromJson(x))),
-    sizeKey: json["sizeKey"],
-    skus: List<Skus>.from(json["skus"].map((x) => Skus.fromJson(x))),
-    styleKey: json["styleKey"],
-    title: json["title"],
-    totalStock: json["totalStock"],
+    json["defaultPrice"],
+    json["isAbroad"],
+    json["priceRange"],
+    List<Prop>.from(json["props"].map((x) => Prop.fromJson(x))),
+    json["sizeKey"],
+    List<Skus>.from(json["skus"].map((x) => Skus.fromJson(x))),
+    json["styleKey"],
+    json["title"],
+    json["totalStock"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -715,16 +715,16 @@ class Prop {
   String label;
   List<PropList> list;
 
-  Prop({
+  Prop(
     this.isDefault,
     this.label,
     this.list,
-  });
+  );
 
   factory Prop.fromJson(Map<String, dynamic> json) => Prop(
-    isDefault: json["isDefault"],
-    label: json["label"],
-    list: List<PropList>.from(json["list"].map((x) => PropList.fromJson(x))),
+    json["isDefault"],
+    json["label"],
+    List<PropList>.from(json["list"].map((x) => PropList.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {
@@ -738,26 +738,26 @@ class PropList {
   int index;
   bool isDefault;
   String name;
-  int styleId;
+  int? styleId;
   String type;
-  int sizeId;
+  int? sizeId;
 
-  PropList({
+  PropList(
     this.index,
     this.isDefault,
     this.name,
     this.styleId,
     this.type,
     this.sizeId,
-  });
+  );
 
   factory PropList.fromJson(Map<String, dynamic> json) => PropList(
-    index: json["index"],
-    isDefault: json["isDefault"],
-    name: json["name"],
-    styleId: json["styleId"] == null ? null : json["styleId"],
-    type: json["type"],
-    sizeId: json["sizeId"] == null ? null : json["sizeId"],
+    json["index"],
+    json["isDefault"],
+    json["name"],
+    json["styleId"] == null ? null : json["styleId"],
+    json["type"],
+    json["sizeId"] == null ? null : json["sizeId"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -771,7 +771,7 @@ class PropList {
 }
 
 class Skus {
-  Currency currency;
+  Currency? currency;
   String img;
   int nowprice;
   int price;
@@ -779,11 +779,11 @@ class Skus {
   int sizeId;
   int stock;
   String stockId;
-  Style style;
+  Style? style;
   int styleId;
   String xdSkuId;
 
-  Skus({
+  Skus(
     this.currency,
     this.img,
     this.nowprice,
@@ -795,24 +795,24 @@ class Skus {
     this.style,
     this.styleId,
     this.xdSkuId,
-  });
+  );
 
   factory Skus.fromJson(Map<String, dynamic> json) => Skus(
-    currency: currencyValues.map[json["currency"]],
-    img: json["img"],
-    nowprice: json["nowprice"],
-    price: json["price"],
-    size: json["size"],
-    sizeId: json["sizeId"],
-    stock: json["stock"],
-    stockId: json["stockId"],
-    style: styleValues.map[json["style"]],
-    styleId: json["styleId"],
-    xdSkuId: json["xdSkuId"],
+    currencyValues.map[json["currency"]],
+    json["img"],
+    json["nowprice"],
+    json["price"],
+    json["size"],
+    json["sizeId"],
+    json["stock"],
+    json["stockId"],
+    styleValues.map[json["style"]],
+    json["styleId"],
+    json["xdSkuId"],
   );
 
   Map<String, dynamic> toJson() => {
-    "currency": currencyValues.reverse[currency],
+    "currency": currencyValues.reverse![currency] ,
     "img": img,
     "nowprice": nowprice,
     "price": price,
@@ -820,7 +820,7 @@ class Skus {
     "sizeId": sizeId,
     "stock": stock,
     "stockId": stockId,
-    "style": styleValues.reverse[style],
+    "style": styleValues.reverse![style],
     "styleId": styleId,
     "xdSkuId": xdSkuId,
   };
@@ -845,14 +845,14 @@ class TopBar {
   String img;
   String link;
 
-  TopBar({
+  TopBar(
     this.img,
     this.link,
-  });
+  );
 
   factory TopBar.fromJson(Map<String, dynamic> json) => TopBar(
-    img: json["img"],
-    link: json["link"],
+    json["img"],
+    json["link"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -865,14 +865,14 @@ class Status {
   int code;
   String msg;
 
-  Status({
+  Status(
     this.code,
     this.msg,
-  });
+  );
 
   factory Status.fromJson(Map<String, dynamic> json) => Status(
-    code: json["code"],
-    msg: json["msg"],
+    json["code"],
+    json["msg"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -883,11 +883,11 @@ class Status {
 
 class EnumValues<T> {
   Map<String, T> map;
-  Map<T, String> reverseMap;
+  Map<T, String>? reverseMap;
 
   EnumValues(this.map);
 
-  Map<T, String> get reverse {
+  Map<T, String>? get reverse {
     if (reverseMap == null) {
       reverseMap = map.map((k, v) => new MapEntry(v, k));
     }
